@@ -1,0 +1,284 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font: 1.6rem Helvetica;
+  height: 100vh; /*V port height*/
+  margin: 0;
+}
+#root {
+  height: 100%;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header {
+  grid-area: header;
+  background-color: #4b56f0;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.left a {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem;
+}
+.header-links a:hover {
+  color: #ff8000;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: #4b56f0;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8000; /* tso we dont neew .header-links a:hover */
+}
+
+/* Home Screen */
+.carts {
+  display: flex; /* These two lines will be responsive and no need to media*/
+  flex-wrap: wrap; /*very important remove scrolbar and wrap cards to be responsive*/
+  justify-content: center;
+  align-items: center;
+}
+
+.carts li {
+  list-style-type: none;
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 1rem;
+  height: 44rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+/* cart */
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  margin-bottom: 1rem;
+  z-index: 9;
+}
+
+.cart-header-username {
+}
+.cart-header-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
+.cart-image {
+  margin-top: 0;
+  width: 34rem;
+  height: 34rem;
+  z-index: -1;
+}
+
+.cart-image:hover {
+  transform: scale(1.1);
+
+  transition: all 0.5s ease;
+}
+.cart-action {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 4rem;
+  z-index: 3;
+}
+
+/* single post */
+
+/* Home Screen */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* cart */
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.detail-header-username {
+}
+.detail-header-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
+.detail-image {
+  margin-top: 0;
+  width: 34rem;
+  height: 34rem;
+}
+
+.detail-action {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 4rem;
+}
+
+.comment {
+  display: flex;
+  justify-content: flex-start;
+  height: 4rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+  margin-bottom: 2rem;
+}
+
+.comment-detial {
+}
+.comment-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+.comment-context {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 34rem;
+}
+
+/* loader */
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* forms */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+input {
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+}
+
+/* buttons */
+.button {
+  padding: 1rem;
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.button:hover {
+  border: 0.1rem #404040 solid;
+}
+.button.primary {
+  background-color: #4b56f0;
+  color: #ffffff;
+}
+
+/* this part is for create account in sign in */
+.button.secondary {
+  background-color: #f0f0f0;
+}
+.text-center {
+  text-align: center;
+}
+
+.image-post-upload {
+  width: 50px;
+  height: 50px;
+}
